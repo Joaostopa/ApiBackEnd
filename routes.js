@@ -1,9 +1,12 @@
-const {Router} = require('express');
+import { Router }  from  'express';
+
+import AcessoControle from './views/AcessoControle';
+import JogadorControle from './views/JogadorControle';
 
 const routes = new Router();
 
-routes.get('/', (req, res) =>{
-  return res.json({ ok: true });
-});
+routes.post('/comissao', AcessoControle.store)
 
-module.exports = routes;
+routes.post('/jogador', JogadorControle.store)
+
+export default routes;

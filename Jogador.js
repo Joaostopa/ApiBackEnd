@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose"; 
+import { Schema, model } from 'mongoose'; 
 
 const JogadorSchema = new Schema({
   nome: String,
@@ -8,6 +8,10 @@ const JogadorSchema = new Schema({
   numerocamisa: Number,
   lesao: String,
   posicao: String,
+    user:{
+      type: Schema.Types.ObjectId,
+      ref: 'Jogador'
+    }
 });
 
-export default model('Jogador',UserSchema);
+export default model('Jogador',JogadorSchema);
